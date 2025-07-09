@@ -8,11 +8,12 @@
   "modules-center": ["clock"],
   "modules-right": [
     "custom/htb-ping",
-    "custom/htb-ip",
+
     "custom/tun0",
     "custom/htb-timer",
     "hyprland/window",
     "custom/gh",
+    "custom/wallpaper",
     "wireplumber",
     "network",
     "battery"
@@ -92,14 +93,6 @@
     "tooltip": false,
     "on-click": "~/.config/waybar/scripts/copy-tun0.sh"
   },
-  "custom/htb-ip": {
-    "exec": "~/.config/waybar/scripts/show-htb-ip.sh",
-    "interval": 3,
-    "return-type": "json",
-    "format": "{}",
-    "tooltip": false,
-    "on-click": "~/.config/waybar/scripts/copy-htb-ip.sh"
-  },
   "custom/htb-timer": {
     "exec": "~/.config/waybar/scripts/htb-timer.sh",
     "interval": 1,
@@ -110,7 +103,8 @@
     "exec": "~/.config/waybar/scripts/htb-ping.sh",
     "interval": 5,
     "return-type": "json",
-    "format": "{}"
+    "format": "{}",
+    "on-click": "~/.config/waybar/scripts/copy-htb-ip.sh"
   },
 
 
@@ -159,12 +153,8 @@
     "active-only": false,
     "on-scroll-up": "hyprctl dispatch workspace e+1",
     "on-scroll-down": "hyprctl dispatch workspace e-1",
-    "format": "{icon}",
-    "format-icons": {
-      "active": "󰮯",
-      "default": "󰊠",
-      "special": "S"
-    },
+    "format": "{id}",
+
     "persistent-workspaces": {
       "*": 4
     },

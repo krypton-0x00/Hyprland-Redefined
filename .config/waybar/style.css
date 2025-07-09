@@ -1,4 +1,5 @@
 @import 'mocha.css';
+@import url("pywal-colors.css");
 
 * {
   font-family: JetBrains Mono Nerd Font;
@@ -53,8 +54,8 @@ menu,
 }
 
 #workspaces button.active {
-  color: #1e1e2e;
-  background: #cba6f7;
+  color: @raisin-black;
+  background: @cerise;
   min-width: 20px;
   opacity: 1;
 }
