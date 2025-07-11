@@ -5,32 +5,26 @@ export PATH=$HOME/.config/rofi/scripts:$PATH
 export STARSHIP_CONFIG=~/.config/starship/starship.toml
 export EDITOR=/bin/nvim
 
-if [ ! -d "$ZINIT_HOME" ]; then
-    mkdir -p "$(dirname $ZINIT_HOME)"
-    git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
-fi
-
-source "${ZINIT_HOME}/zinit.zsh"
-
-zinit ice lucid as"program" pick"bin/git-dsf"
-zinit load so-fancy/diff-so-fancy
-
-zinit light zsh-users/zsh-syntax-highlighting
-zinit light zsh-users/zsh-completions
-zinit light zsh-users/zsh-autosuggestions
-zinit light Aloxaf/fzf-tab
-zinit light romkatv/gitstatus
-zinit light zsh-users/zsh-history-substring-search
-
-
-zinit snippet OMZP::git
-zinit snippet OMZP::sudo
-zinit snippet OMZP::aws
-zinit snippet OMZP::kubectl
-zinit snippet OMZP::kubectx
-zinit snippet OMZP::command-not-found
-zinit snippet OMZP::terraform
-
+# if [ ! -d "$ZINIT_HOME" ]; then
+#     mkdir -p "$(dirname $ZINIT_HOME)"
+#     git clone https://github.com/zdharma-continuum/zinit.git "$ZINIT_HOME"
+# fi
+#
+# source "${ZINIT_HOME}/zinit.zsh"
+#
+# zinit ice lucid as"program" pick"bin/git-dsf"
+# zinit load so-fancy/diff-so-fancy
+#
+# zinit light zsh-users/zsh-syntax-highlighting
+# zinit light zsh-users/zsh-completions
+# zinit light zsh-users/zsh-autosuggestions
+# zinit light Aloxaf/fzf-tab
+# zinit light romkatv/gitstatus zinit light zsh-users/zsh-history-substring-search zinit snippet OMZP::git zinit snippet OMZP::sudo zinit snippet OMZP::aws
+# zinit snippet OMZP::kubectl
+# zinit snippet OMZP::kubectx
+# zinit snippet OMZP::command-not-found
+# zinit snippet OMZP::terraform
+#
 autoload -Uz compinit && compinit
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
 
@@ -101,7 +95,6 @@ eval "$(fzf --zsh)"
 # eval "$(atuin init zsh)"
 # eval "$(starship init zsh)"
 #
-alias vim='nvim'
 
 alias gh-create='gh repo create --private --source=. --remote=origin && git push -u --all && gh browse'
 
@@ -222,6 +215,9 @@ complete -C '/usr/bin/aws_completer' aws
 export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
 export PATH="$HOME/.cargo/bin:$PATH"
 
+# NEOFETCH
+alias neofetch='neofetch --config ~/.config/neofetch/config.conf'
+
 #fortune | cowsay
 
 # Todo Manager Alias
@@ -247,5 +243,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 source /usr/share/zsh/plugins/zsh-history-substring-search/zsh-history-substring-search.zsh
 # eval "$(zoxide init zsh)"
 # eval "$(atuin init zsh)"
-eval "$(starship init zsh)"
 

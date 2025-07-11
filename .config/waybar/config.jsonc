@@ -4,18 +4,12 @@
   "margin-right": 3,
   "margin-top": 2,
   "margin-bottom": 0,
-  "modules-left": ["hyprland/workspaces", "cpu", "memory", "network#speed"],
+  "modules-left": ["hyprland/workspaces"], 
   "modules-center": ["clock"],
   "modules-right": [
     "custom/htb-ping",
-
     "custom/tun0",
-    "custom/htb-timer",
     "hyprland/window",
-    "custom/gh",
-    "custom/wallpaper",
-    "wireplumber",
-    "network",
     "battery"
   ],
   "custom/gh": {
